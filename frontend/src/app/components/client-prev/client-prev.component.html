@@ -1,0 +1,60 @@
+<div class="row" *ngIf="!client; else main_content">
+    <h1>Cargando ...</h1>
+</div>
+
+<ng-template #main_content>
+    <div class="row">    
+      
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Office</th>
+                <th scope="col">Position</th>
+                <th scope="col">Salary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-active">
+                <td>
+                    <input type="text" class="form-control" placeholder="Client's name" [value]="client.name" #name>
+                </td>
+                <td>
+                    <input type="text" class="form-control" placeholder="Client's office" [value]="client.office" #office>
+                    
+                </td>
+                <td>
+                    <input type="text" class="form-control" placeholder="Client's position" [value]="client.position" #position>
+
+                </td>
+                <td>
+                    <input type="text" class="form-control" placeholder="Client's salary" [value]="client.salary" #salary>
+
+                </td>
+              </tr>
+              
+            </tbody>
+        </table>
+        
+    
+    </div>
+    <div style="text-align: center;">
+        <table>
+            <tr>
+                <td>
+                    <button class="btn btn-primary btn-block" (click)="updateClient(name, office, position, salary)">
+                        Actualizar
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteClient(client._id)">
+                        Eliminar
+                    </button>
+                </td>
+                
+              </tr>
+        </table>
+    </div>
+</ng-template>
+
+

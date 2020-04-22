@@ -1,0 +1,24 @@
+<div class="row">
+   
+        
+      
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Office</th>
+                <th scope="col">Position</th>
+                <th scope="col">Salary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-active" *ngFor="let client of clients" (click)="selectedClient(client._id)">
+                <td>{{client.name}}</td>
+                <td>{{client.office}}</td>
+                <td>{{client.position}}</td>
+                <td>{{client.salary}}</td>
+              </tr>
+            </tbody>
+          </table> 
+    
+</div>

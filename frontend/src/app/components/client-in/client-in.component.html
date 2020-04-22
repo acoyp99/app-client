@@ -1,0 +1,25 @@
+
+<div class="col-lg-4 mx-auto" >
+    <form (submit)="submitClient(name, office, position, salary)">
+        <legend>Register</legend>
+        <div class="form-group">
+            <label >Client Name</label>
+            <input type="text" class="form-control" placeholder="Enter name" #name>
+        </div>
+        <div class="form-group">
+            <label for="">Office</label>
+            <input type="text" class="form-control" id="" placeholder="Enter Office" #office>
+        </div>
+        <div class="form-group">
+            <label for="">Position</label>
+            <input type="text" class="form-control" id="" placeholder="Enter position" #position>
+        </div>
+        <div class="form-group">
+            <label for="">salary</label>
+            <input type="text" class="form-control" id="" placeholder="Enter salary" #salary>
+        </div> 
+        <button class="btn btn-primary btn-block">
+            Submit
+        </button>
+    </form>
+</div>

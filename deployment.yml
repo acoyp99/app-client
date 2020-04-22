@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tekton-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tekton-app
+  template:
+    metadata:
+      labels:
+        app: tekton-app
+    spec:
+      containers:
+        - name: tekton-app
+          image: webapp:1
+          # for local development against minikube registry
+          #imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-service
+  labels:
+    app: app-service
+spec:
+  type: NodePort
+  ports:
+    # the port that this service should serve on
+    - port: 80
+      targetPort: 8080
+  # label keys and values that must match in order to receive traffic for this service
+  selector:
+    app: tekton-app
